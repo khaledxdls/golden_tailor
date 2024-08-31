@@ -1,7 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import ButtonPrimary from "./ButtonPrimary";
 
 function AboutusHomeSection() {
+  const navigate = useNavigate();
   return (
     <div className=" -mt-24 rounded-[10px] text-center px-40 py-10 bg-slate-50 mx-10 ">
       <h2 class="text-3xl font-bold text-[#134e4a] leading-[1.2] mb-[1.2rem]">
@@ -17,9 +18,9 @@ function AboutusHomeSection() {
         elit.Dolorum ratione incidunt illo necessitatibus cum aliquid accusamus
         distinctio dignissimos placeat ducimus venia.{" "}
       </p>{" "}
-      <ButtonPrimary>
+      <ButtonPrimary onClick={() => navigate("/about")}>
         {" "}
-        <NavLink to="/about"> About us </NavLink>{" "}
+        About Us{" "}
       </ButtonPrimary>{" "}
     </div>
   );

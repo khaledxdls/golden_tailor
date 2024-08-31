@@ -1,8 +1,11 @@
 import { FaHand } from "react-icons/fa6";
 import FeaturesCard from "./FeaturesCard";
 import { GiSewingMachine, GiZipper } from "react-icons/gi";
+import ButtonPrimary from "./ButtonPrimary";
+import { useNavigate } from "react-router-dom";
 
 function ServicesSection() {
+  const navigate = useNavigate();
   const Services = [
     {
       id: 1,
@@ -27,7 +30,7 @@ function ServicesSection() {
     },
   ];
   return (
-    <div className="my-5 p-10">
+    <div className="my-5 p-10 flex flex-col items-center gap-5">
       <p className=" font-bold text-2xl text-center"> Clothing Services </p>{" "}
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-10 mt-5">
         {" "}
@@ -40,6 +43,10 @@ function ServicesSection() {
           />
         ))}{" "}
       </div>{" "}
+      <ButtonPrimary onClick={() => navigate("/services")}>
+        {" "}
+        Learn More{" "}
+      </ButtonPrimary>{" "}
     </div>
   );
 }
