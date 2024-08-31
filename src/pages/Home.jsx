@@ -1,7 +1,11 @@
+import AboutusHomeSection from "../components/AboutusHomeSection";
+import HeroSection from "../components/HeroSection";
+
 function Home() {
   return (
     <div>
-      <img src="./home.jpg" className=" w-full" alt="home"></img>
+      <HeroSection />
+      <AboutusHomeSection />
     </div>
   );
 }
