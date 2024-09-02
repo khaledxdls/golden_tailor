@@ -22,11 +22,9 @@ function HeroSection() {
       <HeroSectionStyled>
         <h1 className=" uppercase ">
           <span className="block text-[1rem] font-bold  text-white">
-            Friendly Expert Tailoring
+            Services
           </span>
-          <span className="block text-[2.1rem] font-bold  text-white">
-            Expert Clothing Alterations and Tailoring Services.
-          </span>
+          
         </h1>
       </HeroSectionStyled>
     </div>
