@@ -7,7 +7,7 @@ import ServicesSection from "../components/ServicesSection";
 function Home() {
   return (
     <div>
-      <HeroSection />
+      <HeroSection pageName="home"/>
       <AboutusHomeSection />
       <FeaturesSection />
       <HowItWorkSection />

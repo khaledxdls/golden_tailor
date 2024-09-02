@@ -1,5 +1,6 @@
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import BussinesInfo from "./BussinesInfo";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
@@ -7,7 +8,9 @@ import MainNav from "./MainNav";
 function NavBar() {
   const [isMobile, setIsMobile] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
+  const location = useLocation();
+  
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1200);
@@ -19,6 +22,12 @@ function NavBar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    // Close dropdown when route changes
+    if (isDropdownOpen) {
+      setIsDropdownOpen(false);
+    }
+  }, [location]);
   const toggleDropdown = () => {
     setIsDropdownOpen(prev => !prev);
   };
