@@ -43,7 +43,7 @@ function NavBar() {
             )}
           </button>
         )}
-        <Logo />
+        {isMobile ? null : <Logo />}
       </div>
       {isMobile && isDropdownOpen && (
         <div className="absolute bg-white shadow-md mt-2 w-full top-full left-0">
