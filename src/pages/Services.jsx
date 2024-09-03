@@ -1,16 +1,33 @@
-import AboutusHomeSection from "../components/AboutusHomeSection";
-import FeaturesSection from "../components/FeaturesSection";
 import HeroSection from "../components/HeroSection";
-import HowItWorkSection from "../components/HowItWorkSection";
 import ServicesSection from "../components/ServicesSection";
+
 function Services() {
+  const Services = [
+    {
+      id: 1,
+      title: "Dry Cleaning",
+      image:"/public/about_hero.jpg",
+    },
+    {
+      id: 2,
+      title: "Wedding Dress Alterations",
+      image: "/public/about_hero.jpg",
+    },
+    {
+      id: 3,
+      title: "Jacket Alterations",
+      image: "/public/about_hero.jpg",
+    },
+    {
+      id: 4,
+      title: "Jacket Alterations",
+      image: "/public/about_hero.jpg",
+    },
+  ];
   return (
     <div>
       <HeroSection pageName="services"/>
-      <AboutusHomeSection />
-      <FeaturesSection />
-      <HowItWorkSection />
-      <ServicesSection />
+      <ServicesSection Services={Services} isHome={false}/>
     </div>
   );
 }
