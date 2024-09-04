@@ -1,9 +1,9 @@
 import Slider from "./Slider";
 
-function Testimonials() {
+function Testimonials({ isServices }) {
   return (
     <section className=" px-12 py-8">
-      <Slider />
+      <Slider isServices={isServices} />{" "}
     </section>
   );
 }

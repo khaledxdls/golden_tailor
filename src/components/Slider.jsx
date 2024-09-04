@@ -23,7 +23,7 @@ const testimonials = [
   },
 ];
 
-const Slider = () => {
+const Slider = ({ isServices }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   useEffect(() => {
     const lastIndex = testimonials.length - 1;
@@ -48,18 +48,20 @@ const Slider = () => {
   }, [currentIndex]);
   return (
     <div>
-      <div className="rounded-[10px] flex flex-col  text-center px-40 py-14  bg-slate-100 overflow-hidden h-[600px] ">
-        <p className="text-3xl font-bold text-primary-50 bg-primary-200 w-fit self-center p-4 leading-[1.2] mb-[0.8rem] text-center">
+      <div className="rounded-[10px] flex flex-col text-center px-4 md:px-40 py-8 md:py-14 bg-slate-100 overflow-hidden h-[600px]">
+        <p className="text-2xl md:text-3xl font-bold text-primary-50 bg-primary-200 w-fit self-center p-2 md:p-4 leading-[1.2] mb-[0.8rem] text-center">
           Testimonials
         </p>
-        <h2 className="text-2xl font-bold text-primary-200 leading-[1.2] mb-[0.8rem]">
-          What our Clients say
+        <h2 className="text-xl md:text-2xl font-bold text-primary-200 leading-[1.2] mb-[0.8rem]">
+          What our Clients are saying
         </h2>
-        <p className="text-xl mb-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
-          ratione incidunt illo necessitatibus cum aliquid accusamus distinctio
-          dignissimos placeat ducimus venia.
-        </p>
+        {!isServices && (
+          <p className="text-base md:text-xl mb-5">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+            ratione incidunt illo necessitatibus cum aliquid accusamus
+            distinctio dignissimos placeat ducimus venia.
+          </p>
+        )}
         <div className="relative">
           <ButtonLeft onClick={() => setCurrentIndex(currentIndex - 1)} />
           <ButtonRight onClick={() => setCurrentIndex(currentIndex + 1)} />
@@ -80,15 +82,15 @@ const Slider = () => {
                 className={`absolute top-0 left-0 flex flex-col gap-[1.2rem] w-full justify-center items-center transition-transform duration-500 ease-in-out ${position}`}
               >
                 <blockquote
-                  className={`bg-slate-100 text-primary-200 border-l-[10px] border-l-primary-300 text-xl  font-bold mx-[10px] my-[1.5em]  quotes:'\u201C''\u201D''\u2018''\u2019' before:content-[open-quote] before:text-[4em] before:leading-[0.1em] before:mr-[0.25em] `}
+                  className={`bg-slate-100 text-primary-200 border-l-[10px] border-l-primary-300 text-base md:text-xl font-bold mx-[10px] my-[1.5em] quotes:'\u201C''\u201D''\u2018''\u2019' before:content-[open-quote] before:text-[3em] md:before:text-[4em] before:leading-[0.1em] before:mr-[0.25em]`}
                 >
                   "{test.text}"
                 </blockquote>
-                <div class=" flex flex-col items-center">
-                  <div class=" w-16 h-16 overflow-hidden  rounded-full">
-                    <img src={test.image} class="w-16  bg-bottom" alt="" />
+                <div className="flex flex-col items-center">
+                  <div className="w-12 md:w-16 h-12 md:h-16 overflow-hidden rounded-full">
+                    <img src={test.image} className="w-full bg-bottom" alt="" />
                   </div>
-                  <div class=" font-bold ">
+                  <div className="font-bold">
                     <p>
                       <b>Vicky Hladynets</b>
                     </p>

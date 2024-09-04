@@ -32,7 +32,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-primary-50 fixed w-[90%] left-1/2 transform -translate-x-1/2 mt-5 px-[2.4rem] py-[1.2rem] flex items-center justify-between">
+    <nav className="z-30 bg-primary-50 fixed w-[90%] left-1/2 transform -translate-x-1/2 mt-5 px-[2.4rem] py-[1.2rem] flex items-center justify-between">
       <div className="flex items-center">
         {isMobile && (
           <button onClick={toggleDropdown} className="focus:outline-none mr-4">

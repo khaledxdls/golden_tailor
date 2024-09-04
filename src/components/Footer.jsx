@@ -10,7 +10,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="p-14 border-t-2  border-t-slate-300">
+    <footer className="p-14 border-t-2  border-t-slate-300 ">
       <div className="_box flex  justify-center gap-14  mb-12">
         <div className="footer_items">
           <div className="flex flex-col gap-3 items-center">

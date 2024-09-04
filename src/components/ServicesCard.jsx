@@ -1,24 +1,26 @@
-import styled from "styled-components";
-const StyledImage = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: relative;
-  filter: brightness(0.5);
-  overflow-y: hidden;
-`;
+import React, { useState } from "react";
+
 function ServicesCard({ title, image }) {
-  
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className=" bg-slate-100 p-8">
-      <div className=" flex flex-col gap-5 items-center">
-        <div className="bg-stone-100 rounded-full border p-3 border-zinc-600">
-        <StyledImage src={image} />
+    <div
+      className="bg-slate-100 h-[500px] overflow-hidden relative"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <img
+        className={`absolute inset-0 w-full h-full object-cover brightness-50 ease-in-out duration-500 transform ${
+          isHovered ? "blur-sm scale-105" : ""
+        }`}
+        src={image}
+        alt="services"
+      />
+      {isHovered && (
+        <div className="absolute inset-0 flex items-center justify-center text-center transition-opacity duration-500 ease-in-out">
+          <p className="font-bold text-2xl text-primary-50">{title}</p>
         </div>
-        <div className=" text-center">
-          <p className="font-bold"> {title} </p> 
-        </div>
-      </div>
+      )}
     </div>
   );
 }
